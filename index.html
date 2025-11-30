@@ -1,107 +1,363 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UU Plastination | Automated Bubble-Rate Monitoring System</title>
-    <meta name="description" content="A Raspberry-Pi-powered automated monitoring and valve-control system that tracks bubble rates during plastination using computer vision, stepper control, and a secure web interface." />
-    <meta name="keywords" content="plastination, automation, computer vision, engineering research, Raspberry Pi, bubble monitoring, acetone dehydration" />
-    <meta name="author" content="UU Plastination Team" />
-
-    <meta property="og:title" content="UU Plastination | Automated Bubble-Rate Monitoring System" />
-    <meta property="og:description" content="A Raspberry-Pi-powered automated monitoring and valve-control system that tracks bubble rates during plastination using computer vision, stepper control, and a secure web interface." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://uuplastination.com/og-image.png" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="UU Plastination | Automated Bubble-Rate Monitoring System" />
-    <meta name="twitter:description" content="Engineering research project automating plastination process monitoring" />
-    <meta name="twitter:image" content="https://uuplastination.com/og-image.png" />
-    
+    <meta name="description" content="A Raspberry-Pi-powered automated monitoring and valve-control system that tracks bubble rates during plastination using computer vision, stepper control, and a secure web interface.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
-
-  <body>
-    <header class="site-header">
-      <div class="container">
-        <h1 class="logo">UU Plastination</h1>
-        <nav class="nav">
-          <a href="#overview">Overview</a>
-          <a href="#features">Features</a>
-          <a href="#architecture">Architecture</a>
-          <a href="#contact">Contact</a>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header id="header">
+        <nav class="container">
+            <div class="nav-content">
+                <a href="#" class="logo">
+                    <div class="logo-icon">UU</div>
+                    <span>Plastination</span>
+                </a>
+                <div class="nav-links" id="navLinks">
+                    <a href="#overview">Overview</a>
+                    <a href="#system">System</a>
+                    <a href="#research">Research</a>
+                    <a href="#faq">FAQ</a>
+                    <a href="/secure" class="btn-outline">Lab Login</a>
+                </div>
+                <button class="mobile-menu" id="mobileMenuBtn" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </nav>
-      </div>
     </header>
 
-    <main>
-      <section class="hero" id="overview">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="container hero-content">
+            <div class="badge">
+                <span class="pulse"></span>
+                <span>Student Research Project</span>
+            </div>
+            <h1>Automated Plastination<span class="highlight">Monitoring System</span></h1>
+            <p class="hero-text">A Raspberry-Pi-powered automated monitoring and valve-control system that tracks bubble rates in an acetone tank during plastination using camera-based detection, stepper control, and a secure web interface.</p>
+            <div class="hero-buttons">
+                <a href="#overview" class="btn-primary">Learn More →</a>
+                <a href="#system" class="btn-secondary">See How It Works</a>
+            </div>
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-value">24/7</div>
+                    <div class="stat-label">Monitoring</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">5+</div>
+                    <div class="stat-label">Disciplines</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">100%</div>
+                    <div class="stat-label">Automated</div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator"></div>
+    </section>
+
+    <!-- Problem Section -->
+    <section id="overview" class="section section-alt">
         <div class="container">
-          <h2>Automated Bubble‑Rate Monitoring System</h2>
-          <p>
-            A Raspberry‑Pi powered monitoring and valve‑control system that tracks
-            bubble rates during plastination using computer vision, stepper control,
-            and a secure web interface.
-          </p>
-          <div class="hero-cta">
-            <a class="button primary" href="#features">Explore Features</a>
-            <a class="button" href="#architecture">View Architecture</a>
-          </div>
+            <div class="section-header">
+                <h2>The Challenge</h2>
+                <p>Plastination involves circulating acetone through biological specimens to remove fat and water. The rate at which bubbles rise through the acetone indicates dehydration progress—but traditional monitoring is manual, subjective, and labor-intensive.</p>
+            </div>
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-icon">👁️</div>
+                    <h3>Manual Observation</h3>
+                    <p>Lab staff must visually monitor bubble rates throughout the plastination process, requiring constant attention.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">⏰</div>
+                    <h3>Time-Intensive</h3>
+                    <p>The dehydration process runs continuously, demanding around-the-clock monitoring and manual adjustments.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📉</div>
+                    <h3>Inconsistent Results</h3>
+                    <p>Subjective visual assessment can lead to variability in specimen quality and processing outcomes.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">⚠️</div>
+                    <h3>Limited Data</h3>
+                    <p>Without automated tracking, there's no historical data to optimize the process or troubleshoot issues.</p>
+                </div>
+            </div>
+            <div class="info-box">
+                <h3>Why This Matters</h3>
+                <p>Plastination is a critical process for preserving anatomical specimens used in medical education and research. Improving the consistency and efficiency of this process directly benefits anatomy labs, medical students, and researchers worldwide.</p>
+            </div>
         </div>
-      </section>
+    </section>
 
-      <section class="features" id="features">
-        <div class="container grid">
-          <div class="card">
-            <h3>Computer Vision</h3>
-            <p>Real‑time bubble detection and rate estimation with camera input.</p>
-          </div>
-          <div class="card">
-            <h3>Automated Control</h3>
-            <p>Stepper‑driven needle valve adjustments based on target setpoints.</p>
-          </div>
-          <div class="card">
-            <h3>Secure Web UI</h3>
-            <p>Live telemetry, charts, and controls accessible over the network.</p>
-          </div>
-          <div class="card">
-            <h3>Data Logging</h3>
-            <p>Session history, alerts, and export for analysis and reporting.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="architecture" id="architecture">
+    <!-- System Section -->
+    <section id="system" class="section">
         <div class="container">
-          <h2>System Architecture</h2>
-          <ul class="arch-list">
-            <li><strong>Raspberry Pi</strong> captures video and runs CV pipeline.</li>
-            <li><strong>Motor Driver</strong> actuates stepper for valve control.</li>
-            <li><strong>Web Server</strong> publishes metrics and controls securely.</li>
-            <li><strong>Storage</strong> persists time series for later review.</li>
-          </ul>
+            <div class="section-header">
+                <h2>The Solution</h2>
+                <p>A fully automated, three-layer system that replaces manual monitoring with precise, data-driven control.</p>
+            </div>
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-icon">💻</div>
+                    <h3>Hardware Layer</h3>
+                    <ul>
+                        <li>Raspberry Pi 5 main controller</li>
+                        <li>IMX708 wide-angle camera</li>
+                        <li>DM542 stepper driver + NEMA 17 motor</li>
+                        <li>24V Mean Well power supply</li>
+                        <li>Custom 3D-printed PETG valve linkage</li>
+                        <li>Precision limit switches</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📱</div>
+                    <h3>Software Layer</h3>
+                    <ul>
+                        <li>FastAPI backend on Raspberry Pi</li>
+                        <li>Real-time serial communication</li>
+                        <li>Secure web interface (Cloudflare Tunnel)</li>
+                        <li>Live camera feed streaming</li>
+                        <li>Valve control endpoints</li>
+                        <li>Historical data logging</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📸</div>
+                    <h3>Vision Layer</h3>
+                    <ul>
+                        <li>Continuous video stream processing</li>
+                        <li>Real-time bubble monitoring</li>
+                        <li>Manual observation verification</li>
+                        <li>Data logging and analysis</li>
+                        <li>Historical rate tracking</li>
+                        <li>Process documentation</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="workflow">
+                <h3>🔄 System Workflow</h3>
+                <div class="workflow-steps">
+                    <div class="workflow-step">
+                        <div class="step-number">1</div>
+                        <h4>Capture</h4>
+                        <p>Camera continuously records bubbling in acetone tank</p>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-number">2</div>
+                        <h4>Observe</h4>
+                        <p>Live video feed enables remote monitoring and analysis</p>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-number">3</div>
+                        <h4>Control</h4>
+                        <p>System adjusts valve position based on bubble rate</p>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-number">4</div>
+                        <h4>Monitor</h4>
+                        <p>Researchers view live data on secure web dashboard</p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </section>
+    </section>
 
-      <section class="contact" id="contact">
+    <!-- Research Section -->
+    <section id="research" class="section section-alt">
         <div class="container">
-          <h2>Contact</h2>
-          <p>Email the team at <a href="mailto:info@uuplastination.com">info@uuplastination.com</a>.</p>
+            <div class="section-header">
+                <div class="badge">Educational Impact</div>
+                <h2>A Multidisciplinary Engineering Project</h2>
+                <p>This project brings together concepts from across the engineering curriculum, providing hands-on experience with real-world systems integration.</p>
+            </div>
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-icon">🔧</div>
+                    <h3>Mechanical Engineering</h3>
+                    <p>Valve mechanics, fluid dynamics, 3D-printed linkage design</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">⚡</div>
+                    <h3>Electrical Engineering</h3>
+                    <p>Power distribution, motor drivers, sensor integration</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🖥️</div>
+                    <h3>Computer Engineering</h3>
+                    <p>Raspberry Pi control systems, embedded programming</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">💾</div>
+                    <h3>Software Engineering</h3>
+                    <p>FastAPI backend, web interface, real-time streaming</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🤖</div>
+                    <h3>AI & Computer Vision</h3>
+                    <p>YOLO model training, bubble detection, CVAT annotation</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📊</div>
+                    <h3>Data Science</h3>
+                    <p>Real-time analytics, data visualization, optimization</p>
+                </div>
+            </div>
+            <div class="info-box">
+                <h3>Key Learning Outcomes</h3>
+                <div class="grid-2">
+                    <div>
+                        <h4>• Instrumentation & Measurement</h4>
+                        <p>Real-time camera monitoring and bubble-rate analytics</p>
+                    </div>
+                    <div>
+                        <h4>• Controls & Mechatronics</h4>
+                        <p>Stepper motor control with homing and precise actuation</p>
+                    </div>
+                    <div>
+                        <h4>• Embedded Systems</h4>
+                        <p>Multi-service Raspberry Pi deployment with sensor management</p>
+                    </div>
+                    <div>
+                        <h4>• Full-Stack Development</h4>
+                        <p>Complete web application with secure cloud deployment</p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </section>
-    </main>
+    </section>
 
-    <footer class="site-footer">
-      <div class="container">
-        <p>© <span id="year"></span> UU Plastination • Engineering Research</p>
-      </div>
+    <!-- FAQ Section -->
+    <section id="faq" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know about the project</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">What is plastination?</button>
+                    <div class="faq-answer">
+                        <p>Plastination is a technique used to preserve biological specimens by replacing water and fat with polymers. The process begins with dehydration using acetone, followed by impregnation with a polymer such as silicone rubber or epoxy resin.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Why is bubble monitoring important in plastination?</button>
+                    <div class="faq-answer">
+                        <p>During the acetone dehydration phase, bubbles rise through the liquid as water and fat are extracted from the specimen. The rate at which these bubbles form indicates how much moisture remains and how well the dehydration is progressing.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">How does the automated system improve upon manual monitoring?</button>
+                    <div class="faq-answer">
+                        <p>Manual monitoring requires lab staff to visually observe bubble rates at regular intervals. Our automated system uses a camera to provide continuous remote monitoring, log data for analysis, and control acetone flow via a motorized valve.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">What hardware components make up the system?</button>
+                    <div class="faq-answer">
+                        <p>The system is built around a Raspberry Pi 5, which controls an IMX708 wide-angle camera and a NEMA 17 stepper motor (driven by a DM542 driver). Power is supplied by a 24V Mean Well supply. The valve linkage is custom 3D-printed from PETG.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">How does the camera-based monitoring work?</button>
+                    <div class="faq-answer">
+                        <p>The system uses an IMX708 wide-angle camera to capture continuous video of the bubbling process. This live feed is streamed to a secure web interface where researchers can remotely observe the acetone tank and monitor bubble activity.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Can this system be adapted for other laboratory processes?</button>
+                    <div class="faq-answer">
+                        <p>Absolutely. The core technologies—camera-based monitoring, motorized control, real-time data visualization, and cloud-secured interfaces—are broadly applicable to chemical reactions, fermentation processes, or any scenario requiring visual observation and automated control.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Section -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2>Future Development</h2>
+                <p>The project continues to evolve with exciting enhancements on the horizon.</p>
+            </div>
+            <div class="grid-2">
+                <div class="card">
+                    <div class="status-badge status-progress">In Progress</div>
+                    <div class="card-icon">📈</div>
+                    <h3>Closed-Loop Control</h3>
+                    <p>Implementing automatic feedback control where the system continuously adjusts the valve to maintain optimal bubble rates based on real-time monitoring data.</p>
+                </div>
+                <div class="card">
+                    <div class="status-badge status-planned">Planned</div>
+                    <div class="card-icon">💡</div>
+                    <h3>Advanced Analytics</h3>
+                    <p>Building comprehensive data visualization dashboards with historical trends, comparative analysis, and process optimization recommendations.</p>
+                </div>
+                <div class="card">
+                    <div class="status-badge status-planned">Planned</div>
+                    <div class="card-icon">🎯</div>
+                    <h3>Sensor Integration</h3>
+                    <p>Adding additional sensors for temperature, pressure, and flow rate monitoring to provide a complete picture of the plastination process.</p>
+                </div>
+                <div class="card">
+                    <div class="status-badge status-future">Future</div>
+                    <div class="card-icon">🚀</div>
+                    <h3>Multi-Lab Deployment</h3>
+                    <p>Scaling the system to multiple anatomy labs to gather comparative data, validate effectiveness, and refine the technology for broader adoption.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo">
+                        <div class="logo-icon">UU</div>
+                        <span>Plastination</span>
+                    </div>
+                    <p>A student engineering research project focused on automating plastination monitoring through computer vision and precision control systems.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="#overview">Overview</a>
+                    <a href="#system">System Architecture</a>
+                    <a href="#research">Research & Education</a>
+                    <a href="#faq">FAQ</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="mailto:contact@uuplastination.com" aria-label="Email">📧</a>
+                        <a href="https://github.com" aria-label="GitHub">💻</a>
+                    </div>
+                    <a href="/secure" class="login-link">Lab Staff Login →</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 UU Plastination Project. All rights reserved.</p>
+                <p>A Student Engineering Research Initiative</p>
+            </div>
+        </div>
     </footer>
 
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-  </body>
+    <script src="script.js"></script>
+</body>
 </html>
