@@ -1,73 +1,139 @@
-# Welcome to your Lovable project
+# UU Plastination Monitoring System
 
-## Project info
+A student engineering research project focused on automating plastination monitoring through computer vision and precision control systems.
 
-**URL**: https://lovable.dev/projects/297bb849-1f45-4b74-9361-7f7f9e50f976
+## Project Overview
 
-## How can I edit this code?
+This is a modern React web application that showcases an automated plastination monitoring system. The system uses a Raspberry Pi 5, camera-based bubble detection, and motorized valve control to automate the traditionally manual process of monitoring acetone dehydration during plastination.
 
-There are several ways of editing your application.
+**Live Site**: https://lovable.dev/projects/297bb849-1f45-4b74-9361-7f7f9e50f976
 
-**Use Lovable**
+## Technologies
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/297bb849-1f45-4b74-9361-7f7f9e50f976) and start prompting.
+- **Vite** - Fast build tool and development server
+- **TypeScript** - Type-safe JavaScript
+- **React 18** - UI framework
+- **React Router** - Client-side routing
+- **shadcn/ui** - Modern, accessible component library
+- **Tailwind CSS** - Utility-first styling
+- **Lucide React** - Icon library
 
-Changes made via Lovable will be committed automatically to this repo.
+## Project Structure
 
-**Use your preferred IDE**
+The repository has been organized for maximum readability and maintainability:
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+```
+src/
+├── App.tsx                          # Main app with routing and page components
+├── main.tsx                         # Application entry point
+├── components/
+│   ├── LandingSections.tsx          # All landing page sections (Hero, Problem, System, Research, FAQ, Future)
+│   ├── LayoutComponents.tsx         # Navigation and Footer components
+│   └── ui/                          # shadcn/ui component library
+├── hooks/
+│   └── index.ts                     # All custom hooks (useToast, useIsMobile)
+├── lib/
+│   └── utils.ts                     # Utility functions
+└── assets/                          # Images and static assets
+```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### File Consolidation
 
-Follow these steps:
+This project follows a **consolidated file structure** to improve readability:
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- **LandingSections.tsx** - Contains all 6 landing page sections (Hero, ProblemSection, SystemSection, ResearchSection, FAQSection, FutureSection) in one file
+- **LayoutComponents.tsx** - Contains Navigation and Footer components
+- **App.tsx** - Contains routing logic and the Index/NotFound page components
+- **hooks/index.ts** - Contains all custom hooks in a single exportable module
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+This approach reduces file count from 18+ component files to just 3 core files, making the codebase easier to navigate while maintaining all functionality.
 
-# Step 3: Install the necessary dependencies.
-npm i
+## Getting Started
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### Prerequisites
+
+- Node.js (v18 or higher recommended)
+- npm or yarn package manager
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/xavier8264/uuplastination-public.git
+
+# Navigate to project directory
+cd uuplastination-public
+
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will be available at `http://localhost:5173`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Build for Production
 
-**Use GitHub Codespaces**
+```bash
+# Create production build
+npm run build
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# Preview production build
+npm run preview
+```
 
-## What technologies are used for this project?
+## Development
 
-This project is built with:
+### Available Scripts
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run build:dev` - Build in development mode
+- `npm run lint` - Run ESLint
+- `npm run preview` - Preview production build
 
-## How can I deploy this project?
+### Code Style
 
-Simply open [Lovable](https://lovable.dev/projects/297bb849-1f45-4b74-9361-7f7f9e50f976) and click on Share -> Publish.
+This project uses:
+- ESLint for code linting
+- TypeScript for type safety
+- Tailwind CSS for styling with consistent design tokens
 
-## Can I connect a custom domain to my Lovable project?
+## Features
 
-Yes, you can!
+### Landing Page Sections
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+1. **Hero** - Introduces the automated plastination monitoring system
+2. **Problem** - Explains the challenges of manual plastination monitoring
+3. **Solution** - Details the three-layer system architecture (Hardware, Software, Vision)
+4. **Research** - Highlights the multidisciplinary engineering aspects
+5. **FAQ** - Answers common questions about the project
+6. **Future** - Outlines the development roadmap
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+### Responsive Design
+
+- Mobile-first approach
+- Smooth scrolling navigation
+- Accessible UI components
+- Dark/light mode support via shadcn/ui
+
+## Deployment
+
+This project can be deployed using:
+
+- **Lovable** - Click Share → Publish in the Lovable dashboard
+- **Vercel/Netlify** - Connect your Git repository for automatic deployments
+- **Static Hosting** - Build and upload the `dist` folder to any static host
+
+## Contributing
+
+This is a student research project. For inquiries about collaboration or technical questions, please contact through the university's engineering department.
+
+## License
+
+All rights reserved. © 2024 UU Plastination Project
+
+---
+
+**Note**: This is the public informational website. The actual control system and lab access are secured behind authentication and not included in this repository.
