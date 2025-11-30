@@ -4,15 +4,16 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
-import { Navigation, Footer } from "@/components/LayoutComponents";
 import { 
+  Navigation, 
+  Footer, 
   Hero, 
   ProblemSection, 
   SystemSection, 
   ResearchSection, 
   FAQSection, 
   FutureSection 
-} from "@/components/LandingSections";
+} from "@/components";
 
 const queryClient = new QueryClient();
 

@@ -20,33 +20,39 @@ This is a modern React web application that showcases an automated plastination 
 
 ## Project Structure
 
-The repository has been organized for maximum readability and maintainability:
+The repository has been streamlined for **maximum readability** with an ultra-consolidated file structure:
 
 ```
 src/
-├── App.tsx                          # Main app with routing and page components
-├── main.tsx                         # Application entry point
-├── components/
-│   ├── LandingSections.tsx          # All landing page sections (Hero, Problem, System, Research, FAQ, Future)
-│   ├── LayoutComponents.tsx         # Navigation and Footer components
-│   └── ui/                          # shadcn/ui component library
-├── hooks/
-│   └── index.ts                     # All custom hooks (useToast, useIsMobile)
-├── lib/
-│   └── utils.ts                     # Utility functions
-└── assets/                          # Images and static assets
+├── App.tsx              # App shell: routing, providers, page layouts
+├── main.tsx             # Application entry point
+├── components.tsx       # ALL custom components (8 components in 1 file)
+├── components/ui/       # shadcn/ui library (35+ reusable components)
+├── hooks/index.ts       # All custom React hooks
+├── lib/utils.ts         # Utility functions
+└── assets/              # Images and static files
 ```
 
-### File Consolidation
+### File Consolidation Strategy
 
-This project follows a **consolidated file structure** to improve readability:
+This project uses an **ultra-consolidated architecture** that combines related components into single files:
 
-- **LandingSections.tsx** - Contains all 6 landing page sections (Hero, ProblemSection, SystemSection, ResearchSection, FAQSection, FutureSection) in one file
-- **LayoutComponents.tsx** - Contains Navigation and Footer components
-- **App.tsx** - Contains routing logic and the Index/NotFound page components
-- **hooks/index.ts** - Contains all custom hooks in a single exportable module
+**Before consolidation:** 18+ separate component files  
+**After consolidation:** **1 main components file** (`components.tsx`)
 
-This approach reduces file count from 18+ component files to just 3 core files, making the codebase easier to navigate while maintaining all functionality.
+#### What's in `components.tsx`:
+All 8 custom components organized with clear comment headers:
+- **Layout Components:** `Navigation`, `Footer`
+- **Page Sections:** `Hero`, `ProblemSection`, `SystemSection`, `ResearchSection`, `FAQSection`, `FutureSection`
+
+#### Why this approach?
+✅ **Easier navigation** - Find all custom components in one place  
+✅ **Faster development** - No switching between multiple files  
+✅ **Better readability** - Clear section headers separate each component  
+✅ **Simpler imports** - Single import statement instead of multiple  
+✅ **Maintained modularity** - Components are still independent and reusable  
+
+The shadcn/ui library (`components/ui/`) remains separate as it's a managed dependency with 35+ components.
 
 ## Getting Started
 
