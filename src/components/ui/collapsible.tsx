@@ -1,9 +1,3 @@
-import * as CollapsiblePrimitive from "@radix-ui/react-collapsible";
-
-const Collapsible = CollapsiblePrimitive.Root;
-
-const CollapsibleTrigger = CollapsiblePrimitive.CollapsibleTrigger;
-
-const CollapsibleContent = CollapsiblePrimitive.CollapsibleContent;
-
-export { Collapsible, CollapsibleTrigger, CollapsibleContent };
+// Deprecated: consolidated into megafile.tsx. Use named exports from './megafile'.
+// This file re-exports everything for backward compatibility.
+export * from './megafile';

@@ -1,5 +1,3 @@
-import * as AspectRatioPrimitive from "@radix-ui/react-aspect-ratio";
-
-const AspectRatio = AspectRatioPrimitive.Root;
-
-export { AspectRatio };
+// Deprecated: consolidated into megafile.tsx. Use named exports from './megafile'.
+// This file re-exports everything for backward compatibility.
+export * from './megafile';
