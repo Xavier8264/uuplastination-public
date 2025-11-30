@@ -6,8 +6,6 @@ A student engineering research project focused on automating plastination monito
 
 This is a modern React web application that showcases an automated plastination monitoring system. The system uses a Raspberry Pi 5, camera-based bubble detection, and motorized valve control to automate the traditionally manual process of monitoring acetone dehydration during plastination.
 
-**Live Site**: https://lovable.dev/projects/297bb849-1f45-4b74-9361-7f7f9e50f976
-
 ## Technologies
 
 - **Vite** - Fast build tool and development server
