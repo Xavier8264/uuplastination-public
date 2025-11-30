@@ -1,258 +1,30 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>UU Plastination — Public Site</title>
-  <meta name="description" content="Public website for UU Plastination." />
-  <style>
-    :root{
-      --bg:#0b0f14;--card:#121923;--muted:#A9B1BC;--text:#E9EEF4;--accent:#5CC8FF;--ok:#47D18C;--warn:#FFB54C;--danger:#FF6B6B;--border:#223041;
-      --public:#0B84FF;
-    }
-    @media (prefers-color-scheme: light){
-      :root{ --bg:#f7fbff; --card:#ffffff; --muted:#4A5A6A; --text:#0e1726; --accent:#0B84FF; --ok:#0EAD69; --warn:#C97700; --danger:#D93D3D; --border:#DFE7F1; --public:#0B84FF; }
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif}
-    a{color:var(--accent);text-decoration:none}
-    a:hover{text-decoration:underline}
-    header{position:sticky;top:0;background:linear-gradient(180deg,rgba(0,0,0,.18),transparent),var(--bg);backdrop-filter:saturate(120%) blur(6px);border-bottom:1px solid var(--border);z-index:10}
-    .wrap{max-width:1100px;margin:0 auto;padding:1rem}
-    .bar{display:flex;align-items:center;gap:.75rem;justify-content:space-between}
-    .brand{display:flex;gap:.75rem;align-items:center}
-    .logo{width:40px;height:40px;border-radius:10px;background:conic-gradient(from 200deg at 50% 50%, #0B84FF, #47D18C, #FFB54C, #0B84FF);box-shadow:0 2px 10px rgba(0,0,0,.15)}
-    nav a{margin-left:1rem;font-weight:600}
-    .hero{padding:2.2rem 0;border-bottom:1px solid var(--border)}
-    h1{font-size:clamp(1.6rem,3.2vw,2.2rem);margin:.2rem 0 .6rem}
-    .muted{color:var(--muted)}
-    .grid{display:grid;gap:1rem;margin:1.25rem 0 2rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1rem}
-    .card h3{margin:.2rem 0 .6rem;font-size:1.05rem}
-    .pill{display:inline-flex;align-items:center;gap:.4rem;padding:.28rem .6rem;border-radius:999px;border:1px solid var(--border);font-size:.82rem}
-    .ok{color:var(--ok)} .warn{color:var(--warn)} .danger{color:var(--danger)}
-    .row{display:flex;gap:.75rem;flex-wrap:wrap}
-    ul.clean{list-style:none;padding:0;margin:.2rem 0}
-    ul.clean li{padding:.35rem 0;border-bottom:1px dashed var(--border)}
-    ul.clean li:last-child{border-bottom:none}
-    footer{border-top:1px solid var(--border);padding:1.25rem 0;color:var(--muted)}
-    .btn{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;border:1px solid var(--border);padding:.6rem .9rem;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(0,0,0,.02));text-decoration:none}
-    .btn:hover{transform:translateY(-1px)}
-    .kbd{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:rgba(127,127,127,.12);border:1px solid var(--border);border-bottom-width:2px;border-radius:8px;padding:.2rem .4rem}
-    .two{display:grid;gap:1rem;grid-template-columns:1.1fr .9fr}
-    @media (max-width:900px){.two{grid-template-columns:1fr}}
-    .note{font-size:.9rem;line-height:1.4}
-    .table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--border);border-radius:12px;overflow:hidden}
-    .table th,.table td{padding:.6rem .7rem;border-bottom:1px solid var(--border);text-align:left}
-    .table tr:last-child td{border-bottom:none}
-    .tag{display:inline-block;padding:.16rem .5rem;border:1px solid var(--border);border-radius:999px;margin-right:.35rem;font-size:.78rem}
-    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
-    .banner{display:flex;align-items:center;gap:.6rem;border:1px solid var(--public);background:rgba(11,132,255,.08);padding:.55rem .8rem;border-radius:10px}
-    .banner strong{color:var(--public)}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UU Plastination | Automated Bubble-Rate Monitoring System</title>
+    <meta name="description" content="A Raspberry-Pi-powered automated monitoring and valve-control system that tracks bubble rates during plastination using computer vision, stepper control, and a secure web interface." />
+    <meta name="keywords" content="plastination, automation, computer vision, engineering research, Raspberry Pi, bubble monitoring, acetone dehydration" />
+    <meta name="author" content="UU Plastination Team" />
 
-    /* FAQ specific styles */
-    .faq details{border-top:1px solid var(--border);padding:0;margin:0}
-    .faq details:first-of-type{border-top:none}
-    .faq summary{list-style:none;cursor:pointer;padding:.85rem 0;display:block;font-weight:600}
-    .faq summary::-webkit-details-marker{display:none}
-    .faq .answer{padding:.25rem 0 .8rem;color:var(--muted);line-height:1.5}
-    .faq ol{margin:.4rem 0 0 1.2rem;color:var(--muted)}
-  </style>
-</head>
-<body>
-<header>
-  <div class="wrap bar">
-    <div class="brand">
-      <div class="logo" aria-hidden="true"></div>
-      <div>
-        <strong>UU Plastination</strong><br/>
-        <span class="muted" style="font-size:.9rem">Public Site</span>
-      </div>
-    </div>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/secure/">Secure Portal</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
+    <meta property="og:title" content="UU Plastination | Automated Bubble-Rate Monitoring System" />
+    <meta property="og:description" content="A Raspberry-Pi-powered automated monitoring and valve-control system that tracks bubble rates during plastination using computer vision, stepper control, and a secure web interface." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://uuplastination.com/og-image.png" />
 
-<main class="wrap">
-  <section class="hero">
-    <div class="banner" role="status" aria-live="polite">
-      <span>🌐</span>
-      <strong>Public Area</strong>
-      <span class="muted">Don’t upload internal documents or sensitive data here.</span>
-    </div>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="UU Plastination | Automated Bubble-Rate Monitoring System" />
+    <meta name="twitter:description" content="Engineering research project automating plastination process monitoring" />
+    <meta name="twitter:image" content="https://uuplastination.com/og-image.png" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
 
-    <div class="two" style="margin-top:1rem">
-      <div>
-        <h1>Welcome to UU Plastination</h1>
-        <p class="muted">
-          This is the public page. It gives a quick overview of what plastination is and what
-          our student-led lab is working on. Team members: use the <a href="/secure/">Secure Portal</a> for internal tools and files.
-        </p>
-        <div class="row" style="margin-top:.8rem">
-          <span class="pill ok">Status: Online</span>
-          <span class="pill">Public Build: <span class="mono">public-v1.0</span></span>
-        </div>
-      </div>
-      <div>
-        <div class="card">
-          <h3>Contact & Hours</h3>
-          <p class="muted note">Open for tours and demonstrations by appointment. Visit the <a href="/secure/">Secure Portal</a> for student resources.</p>
-          <p style="margin-top:.6rem"><a class="btn" href="#contact">Get in touch</a></p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ Section -->
-  <section id="faq" class="wrap" style="padding:1rem 0 2rem">
-    <h2 style="margin:0 0 .4rem">FAQ</h2>
-    <p class="muted" style="margin-top:0">Common questions about plastination and our lab — click a question to expand for the answer.</p>
-
-    <div class="grid" style="margin-top:1rem">
-      <div class="card" style="padding:0">
-        <div style="padding:1rem">
-          <div class="faq">
-            <details>
-              <summary>1. What is plastination?</summary>
-              <div class="answer">
-                <p>Plastination is a preservation technique that replaces the water and fat in biological tissues with durable polymers such as silicone, epoxy, or polyester resin. The result is a dry, odorless, and long-lasting specimen that can be handled and studied without decay.</p>
-              </div>
-            </details>
-
-            <details>
-              <summary>2. Who invented plastination?</summary>
-              <div class="answer">
-                <p>Plastination was developed in 1977 by Dr. Gunther von Hagens at Heidelberg University in Germany. His method revolutionized anatomical preservation and education worldwide.</p>
-              </div>
-            </details>
-
-            <details>
-              <summary>3. How does the plastination process work?</summary>
-              <div class="answer">
-                <p>Plastination generally involves four main steps:</p>
-                <ol>
-                  <li><strong>Fixation</strong> – The specimen is treated with formaldehyde to halt decomposition.</li>
-                  <li><strong>Dehydration</strong> – Water and lipids are removed using acetone.</li>
-                  <li><strong>Forced Impregnation</strong> – Acetone is replaced with a liquid polymer under vacuum.</li>
-                  <li><strong>Curing</strong> – The polymer is hardened with gas, heat, or UV light to create a stable, permanent specimen.</li>
-                </ol>
-              </div>
-            </details>
-
-            <details>
-              <summary>4. Why is plastination important for education and research?</summary>
-              <div class="answer">
-                <p>Plastinated specimens maintain anatomical accuracy while being safe, clean, and reusable. They allow students and researchers to study real biological structures in detail without the health and ethical concerns associated with traditional cadaver preservation.</p>
-              </div>
-            </details>
-
-            <details>
-              <summary>5. What types of specimens can be plastinated?</summary>
-              <div class="answer">
-                <p>Almost any biological specimen can be plastinated — from whole organs and body parts to entire animal specimens, tissues, and even plant samples. At Union University’s Plastination Lab, we focus on educational specimens that support teaching in anatomy, physiology, and biology courses.</p>
-              </div>
-            </details>
-
-            <details>
-              <summary>6. How long does plastination take?</summary>
-              <div class="answer">
-                <p>Depending on the size and complexity of the specimen, the process can take anywhere from a few weeks to several months. The dehydration and impregnation stages are the most time-intensive.</p>
-              </div>
-            </details>
-
-            <details>
-              <summary>7. What materials are used in plastination?</summary>
-              <div class="answer">
-                <p>Key materials include acetone, silicone polymer, curing agents, and vacuum equipment. We also use specialized flow-control valves, temperature sensors, and vacuum pumps to regulate the process.</p>
-              </div>
-            </details>
-
-            <details>
-              <summary>8. Is plastination safe?</summary>
-              <div class="answer">
-                <p>When performed in a controlled environment with proper ventilation and safety equipment, plastination is safe. The finished specimens are completely non-toxic and can be handled without gloves.</p>
-              </div>
-            </details>
-
-            <details>
-              <summary>9. Can the public view plastinated specimens?</summary>
-              <div class="answer">
-                <p>Yes. Depending on current projects and privacy considerations, the lab occasionally hosts open houses, academic tours, and student showcases to display plastinated models and explain the process.</p>
-              </div>
-            </details>
-
-            <details>
-              <summary>10. Who operates the plastination lab at Union University?</summary>
-              <div class="answer">
-                <p>The lab is operated by Union University’s Engineering and Biology Departments, with interdisciplinary collaboration among students in mechanical engineering, biology, and materials science — led by Dr. Tony Wamble and student research teams.</p>
-              </div>
-            </details>
-
-            <details>
-              <summary>11. What makes Union University’s plastination project unique?</summary>
-              <div class="answer">
-                <p>Union’s lab is developing a smart, automated plastination system using Raspberry Pi control, sensors, and data-driven vacuum monitoring. This approach improves consistency, reduces human error, and enables precise process control — making it one of the most advanced undergraduate plastination systems in the country.</p>
-              </div>
-            </details>
-
-            <details>
-              <summary>12. How can I get involved or learn more?</summary>
-              <div class="answer">
-                <p>Students and visitors can contact the Union University Plastination Team through the contact form or by visiting the Engineering or Biology departments. Opportunities for undergraduate research, lab tours, and collaborations are often available.</p>
-              </div>
-            </details>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="wrap">
-    <div class="card" style="border-radius:10px;padding:1rem;background:transparent;border:0">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap">
-        <div class="muted">&copy; Union University Plastination — Public</div>
-        <div class="muted">Built for education • <a href="#contact">Contact</a></div>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    // Small enhancement: animate details open/close for smooth UX
-    document.querySelectorAll('details').forEach(d => {
-      const summary = d.querySelector('summary');
-      const content = d.querySelector('.answer');
-      // ensure answer wrapper exists
-      if (!content) return;
-      // set initial state
-      content.style.overflow = 'hidden';
-      content.style.transition = 'height 220ms ease';
-
-      function updateHeight() {
-        if (d.open) {
-          const h = content.scrollHeight + 'px';
-          content.style.height = h;
-        } else {
-          content.style.height = '0px';
-        }
-      }
-
-      // initialize collapsed
-      content.style.height = d.open ? content.scrollHeight + 'px' : '0px';
-
-      summary.addEventListener('click', () => {
-        // toggle happens after click; delay to allow open attribute to update
-        requestAnimationFrame(() => requestAnimationFrame(updateHeight));
-      });
-      // adjust on resize
-      window.addEventListener('resize', () => {
-        if (d.open) content.style.height = content.scrollHeight + 'px';
-      });
-    });
-  </script>
-</body>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
