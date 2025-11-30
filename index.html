@@ -21,10 +21,87 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css" />
   </head>
 
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <header class="site-header">
+      <div class="container">
+        <h1 class="logo">UU Plastination</h1>
+        <nav class="nav">
+          <a href="#overview">Overview</a>
+          <a href="#features">Features</a>
+          <a href="#architecture">Architecture</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="overview">
+        <div class="container">
+          <h2>Automated Bubble‑Rate Monitoring System</h2>
+          <p>
+            A Raspberry‑Pi powered monitoring and valve‑control system that tracks
+            bubble rates during plastination using computer vision, stepper control,
+            and a secure web interface.
+          </p>
+          <div class="hero-cta">
+            <a class="button primary" href="#features">Explore Features</a>
+            <a class="button" href="#architecture">View Architecture</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="features" id="features">
+        <div class="container grid">
+          <div class="card">
+            <h3>Computer Vision</h3>
+            <p>Real‑time bubble detection and rate estimation with camera input.</p>
+          </div>
+          <div class="card">
+            <h3>Automated Control</h3>
+            <p>Stepper‑driven needle valve adjustments based on target setpoints.</p>
+          </div>
+          <div class="card">
+            <h3>Secure Web UI</h3>
+            <p>Live telemetry, charts, and controls accessible over the network.</p>
+          </div>
+          <div class="card">
+            <h3>Data Logging</h3>
+            <p>Session history, alerts, and export for analysis and reporting.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="architecture" id="architecture">
+        <div class="container">
+          <h2>System Architecture</h2>
+          <ul class="arch-list">
+            <li><strong>Raspberry Pi</strong> captures video and runs CV pipeline.</li>
+            <li><strong>Motor Driver</strong> actuates stepper for valve control.</li>
+            <li><strong>Web Server</strong> publishes metrics and controls securely.</li>
+            <li><strong>Storage</strong> persists time series for later review.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="container">
+          <h2>Contact</h2>
+          <p>Email the team at <a href="mailto:info@uuplastination.com">info@uuplastination.com</a>.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="year"></span> UU Plastination • Engineering Research</p>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>

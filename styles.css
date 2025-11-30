@@ -22,13 +22,16 @@ body{
 }
 .container{max-width:var(--max-width);margin:0 auto;padding:1.25rem}
 .header-inner, .footer-inner, .hero-inner, .contact-inner{display:flex;align-items:center;justify-content:space-between}
-.site-header{position:sticky;top:0;background:rgba(2,6,23,0.6);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,0.02)}
+.site-header{position:sticky;top:0;background:rgba(2,6,23,0.6);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,0.02);z-index:20}
 .logo{display:flex;align-items:center;gap:.5rem;color:var(--white);text-decoration:none}
 .logo .brand{font-weight:700}
 .nav{display:flex;gap:1rem;align-items:center}
 .nav a{color:var(--white);text-decoration:none;padding:.35rem .6rem;border-radius:6px}
 .nav a:hover{background:rgba(255,255,255,0.02)}
 .btn{display:inline-block;padding:.6rem 1rem;border-radius:8px;font-weight:600;text-decoration:none}
+.button{display:inline-block;padding:.6rem 1rem;border-radius:8px;font-weight:600;text-decoration:none}
+.button.primary{background:linear-gradient(90deg,var(--accent-2),var(--accent));color:#042329}
+.button:hover{opacity:.95}
 .btn-primary{background:linear-gradient(90deg,var(--accent-2),var(--accent));color:#042329}
 .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--white)}
 .hero{padding:3.5rem 0}
@@ -43,7 +46,9 @@ body{
 .section-title{font-size:1.25rem;margin-bottom:.25rem}
 .section-sub{color:var(--muted);margin-top:0;margin-bottom:1rem}
 .features{padding:2rem 0}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.card h3{margin-top:0;margin-bottom:.4rem}
+.card p{color:var(--muted);margin:0}
 .feature{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);padding:1rem;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
 .about{padding:1.5rem 0;color:var(--muted)}
 .contact{padding:2rem 0}
