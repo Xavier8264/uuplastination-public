@@ -24,35 +24,38 @@ The repository has been streamlined for **maximum readability** with an ultra-co
 
 ```
 src/
-├── App.tsx              # App shell: routing, providers, page layouts
-├── main.tsx             # Application entry point
-├── components.tsx       # ALL custom components (8 components in 1 file)
+├── main.tsx             # Application entry point (4 lines)
+├── components.tsx       # ALL application code (Navigation, pages, App component)
+├── index.css            # Global styles & Tailwind config
 ├── components/ui/       # shadcn/ui library (35+ reusable components)
 ├── hooks/index.ts       # All custom React hooks
 ├── lib/utils.ts         # Utility functions
 └── assets/              # Images and static files
 ```
 
-### File Consolidation Strategy
+### Ultra-Consolidated Architecture
 
-This project uses an **ultra-consolidated architecture** that combines related components into single files:
+This project achieves **maximum consolidation** by combining ALL custom application code into a single file:
 
-**Before consolidation:** 18+ separate component files  
-**After consolidation:** **1 main components file** (`components.tsx`)
+**Before consolidation:** 20+ TypeScript/React files  
+**After consolidation:** **1 single file** (`components.tsx` - 970 lines)
 
 #### What's in `components.tsx`:
-All 8 custom components organized with clear comment headers:
+Everything needed to run the app, organized with clear comment headers:
 - **Layout Components:** `Navigation`, `Footer`
 - **Page Sections:** `Hero`, `ProblemSection`, `SystemSection`, `ResearchSection`, `FAQSection`, `FutureSection`
+- **Page Components:** `Index`, `NotFound`
+- **App Component:** Main app with routing, providers (React Query, Tooltip, Toast)
 
-#### Why this approach?
-✅ **Easier navigation** - Find all custom components in one place  
-✅ **Faster development** - No switching between multiple files  
-✅ **Better readability** - Clear section headers separate each component  
-✅ **Simpler imports** - Single import statement instead of multiple  
-✅ **Maintained modularity** - Components are still independent and reusable  
+#### Why this extreme consolidation works:
+✅ **Single source of truth** - All custom code in one place  
+✅ **Zero context switching** - No hunting across multiple files  
+✅ **Faster development** - Ctrl+F finds everything instantly  
+✅ **Better code review** - See entire app logic in one view  
+✅ **Maintained organization** - Clear comment sections separate each part  
+✅ **Still modular** - Components remain independent and exportable  
 
-The shadcn/ui library (`components/ui/`) remains separate as it's a managed dependency with 35+ components.
+The shadcn/ui library (`components/ui/`) remains separate as it's a managed dependency.
 
 ## Getting Started
 
