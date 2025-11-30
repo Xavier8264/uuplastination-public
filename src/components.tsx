@@ -186,7 +186,7 @@ export const Footer = () => {
                 <span className="font-semibold text-lg">Plastination</span>
               </div>
               <p className="text-sm text-muted-foreground">
-                A student engineering research project focused on automating plastination monitoring
+                A student engineering research project focused on plastination monitoring
                 through computer vision and precision control systems.
               </p>
             </div>
@@ -311,12 +311,12 @@ export const Hero = () => {
           </div>
 
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-            Automated Plastination
+            Plastination
             <span className="block text-primary mt-2">Monitoring System</span>
           </h1>
 
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
-            A Raspberry-Pi-powered automated monitoring and valve-control system that tracks
+            A Raspberry-Pi-powered monitoring and valve-control system that tracks
             bubble rates in an acetone tank during plastination using camera-based detection, stepper
             control, and a secure web interface.
           </p>
@@ -351,8 +351,8 @@ export const Hero = () => {
               <div className="text-sm text-muted-foreground">Disciplines</div>
             </div>
             <div className="bg-card/50 backdrop-blur-sm rounded-lg p-4 border border-border/50">
-              <div className="text-3xl font-bold text-primary mb-1">100%</div>
-              <div className="text-sm text-muted-foreground">Automated</div>
+              <div className="text-3xl font-bold text-primary mb-1">Real-time</div>
+              <div className="text-sm text-muted-foreground">Monitoring</div>
             </div>
           </div>
         </div>
@@ -392,7 +392,7 @@ export const ProblemSection = () => {
     {
       icon: AlertCircle,
       title: "Limited Data",
-      description: "Without automated tracking, there's no historical data to optimize the process or troubleshoot issues."
+      description: "Without systematic tracking, there's no historical data to optimize the process or troubleshoot issues."
     }
   ];
 
@@ -521,7 +521,7 @@ export const SystemSection = () => {
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">The Solution</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              A fully automated, three-layer system that replaces manual monitoring with precise,
+              A three-layer system that replaces manual monitoring with precise,
               data-driven control.
             </p>
           </div>
@@ -607,8 +607,8 @@ export const ResearchSection = () => {
     },
     {
       icon: Brain,
-      title: "AI & Computer Vision",
-      description: "YOLO model training, bubble detection, CVAT annotation pipeline"
+      title: "Computer Vision",
+      description: "Image processing, bubble detection, video analysis pipeline"
     },
     {
       icon: LineChart,
@@ -719,9 +719,9 @@ export const FAQSection = () => {
         "During the acetone dehydration phase, bubbles rise through the liquid as water and fat are extracted from the specimen. The rate at which these bubbles form indicates how much moisture remains and how well the dehydration is progressing. Monitoring this rate allows researchers to determine when the specimen is ready for the next phase of plastination, ensuring optimal quality."
     },
     {
-      question: "How does the automated system improve upon manual monitoring?",
+      question: "How does the system improve upon manual monitoring?",
       answer:
-        "Manual monitoring requires lab staff to visually observe bubble rates at regular intervals, which is time-consuming, subjective, and prone to human error. Our automated system uses a camera to provide continuous remote monitoring, log data for analysis, and control acetone flow via a motorized valve. This results in more consistent specimen quality, reduced labor costs, and valuable historical data for process optimization."
+        "Manual monitoring requires lab staff to visually observe bubble rates at regular intervals, which is time-consuming, subjective, and prone to human error. Our system uses a camera to provide continuous remote monitoring, log data for analysis, and control acetone flow via a motorized valve. This results in more consistent specimen quality, reduced labor costs, and valuable historical data for process optimization."
     },
     {
       question: "What hardware components make up the system?",
@@ -746,17 +746,17 @@ export const FAQSection = () => {
     {
       question: "Can this system be adapted for other laboratory processes?",
       answer:
-        "Absolutely. The core technologies—camera-based monitoring, motorized control, real-time data visualization, and cloud-secured interfaces—are broadly applicable. Similar systems could monitor chemical reactions, fermentation processes, or any scenario where visual observation and automated control can improve consistency and reduce manual labor. The modular design allows components to be repurposed for a wide range of research and industrial applications."
+        "Absolutely. The core technologies—camera-based monitoring, motorized control, real-time data visualization, and cloud-secured interfaces—are broadly applicable. Similar systems could monitor chemical reactions, fermentation processes, or any scenario where visual observation and precise control can improve consistency and reduce manual labor. The modular design allows components to be repurposed for a wide range of research and industrial applications."
     },
     {
       question: "What are the next steps for this project?",
       answer:
-        "Current work focuses on implementing closed-loop feedback control, where the system automatically adjusts the valve to maintain an optimal bubble rate based on monitoring data. Future development includes adding additional sensors for temperature and flow rate, expanding the web dashboard with advanced analytics and historical trend visualization, and improving overall system reliability. Long-term goals include deploying the system in multiple anatomy labs to gather comparative data and further validate its effectiveness."
+        "Current work focuses on implementing closed-loop feedback control, where the system adjusts the valve to maintain an optimal bubble rate based on monitoring data. Future development includes adding additional sensors for temperature and flow rate, expanding the web dashboard with advanced analytics and historical trend visualization, and improving overall system reliability. Long-term goals include deploying the system in multiple anatomy labs to gather comparative data and further validate its effectiveness."
     },
     {
       question: "Who can I contact for more information?",
       answer:
-        "This is a student-led engineering research project. For academic inquiries, collaboration opportunities, or technical questions, please reach out through our university's engineering department contact page. We welcome interest from fellow researchers, educators, and industry partners interested in automation and laboratory instrumentation."
+        "This is a student-led engineering research project. For academic inquiries, collaboration opportunities, or technical questions, please reach out through our university's engineering department contact page. We welcome interest from fellow researchers, educators, and industry partners interested in laboratory instrumentation."
     }
   ];
 
@@ -806,7 +806,7 @@ export const FutureSection = () => {
       title: "Closed-Loop Control",
       status: "In Progress",
       description:
-        "Implementing automatic feedback control where the system continuously adjusts the valve to maintain optimal bubble rates based on real-time monitoring data."
+        "Implementing feedback control where the system continuously adjusts the valve to maintain optimal bubble rates based on real-time monitoring data."
     },
     {
       icon: Lightbulb,
@@ -888,7 +888,7 @@ export const FutureSection = () => {
               This project embodies the iterative nature of engineering research. Each phase builds
               upon lessons learned, incorporating feedback from lab users and advances in monitoring
               and control systems. Our goal is to create a robust, reliable system that can
-              be replicated and adapted for various laboratory automation needs.
+              be replicated and adapted for various laboratory applications.
             </p>
           </div>
         </div>

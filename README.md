@@ -1,10 +1,10 @@
 # UU Plastination Monitoring System
 
-A student engineering research project focused on automating plastination monitoring through computer vision and precision control systems.
+A student engineering research project focused on plastination monitoring through computer vision and precision control systems.
 
 ## Project Overview
 
-This is a modern React web application that showcases an automated plastination monitoring system. The system uses a Raspberry Pi 5, camera-based bubble detection, and motorized valve control to automate the traditionally manual process of monitoring acetone dehydration during plastination.
+This is a modern React web application that showcases a plastination monitoring system. The system uses a Raspberry Pi 5, camera-based bubble detection, and motorized valve control to streamline the traditionally manual process of monitoring acetone dehydration during plastination.
 
 ## Technologies
 
@@ -111,7 +111,7 @@ This project uses:
 
 ### Landing Page Sections
 
-1. **Hero** - Introduces the automated plastination monitoring system
+1. **Hero** - Introduces the plastination monitoring system
 2. **Problem** - Explains the challenges of manual plastination monitoring
 3. **Solution** - Details the three-layer system architecture (Hardware, Software, Vision)
 4. **Research** - Highlights the multidisciplinary engineering aspects
