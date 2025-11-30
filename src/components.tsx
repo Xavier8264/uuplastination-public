@@ -1,15 +1,18 @@
 import { useState, useEffect } from "react";
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
+  Toaster,
+  Sonner,
+  TooltipProvider,
+  Button,
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
+} from "@/components/ui/megafile";
 import { 
   Menu, 
   X, 
