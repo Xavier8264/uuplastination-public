@@ -187,7 +187,7 @@ export const Footer = () => {
               </div>
               <p className="text-sm text-muted-foreground">
                 A student engineering research project focused on plastination monitoring
-                through computer vision and precision control systems.
+                through real-time video streaming and precision valve control systems.
               </p>
             </div>
 
@@ -317,8 +317,8 @@ export const Hero = () => {
 
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
             A Raspberry-Pi-powered monitoring and valve-control system that tracks
-            bubble rates in an acetone tank during plastination using camera-based detection, stepper
-            control, and a secure web interface.
+            bubble rates in an acetone tank during plastination using real-time video streaming,
+            manual valve control, and a secure web interface.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
@@ -478,15 +478,15 @@ export const SystemSection = () => {
     },
     {
       icon: Camera,
-      title: "Vision Layer",
+      title: "Monitoring Layer",
       color: "text-primary",
       items: [
-        "Continuous video stream processing",
-        "Real-time bubble monitoring",
-        "Manual observation verification",
-        "Data logging and analysis",
-        "Historical rate tracking",
-        "Process documentation"
+        "Continuous video streaming",
+        "Live camera feed access",
+        "Manual bubble observation",
+        "Process documentation",
+        "Historical data logging",
+        "Visual record keeping"
       ]
     }
   ];
@@ -500,12 +500,12 @@ export const SystemSection = () => {
     {
       step: "2",
       title: "Observe",
-      description: "Live video feed enables remote monitoring and analysis"
+      description: "Live video feed enables remote manual monitoring"
     },
     {
       step: "3",
       title: "Control",
-      description: "System adjusts valve position based on bubble rate"
+      description: "Operator manually adjusts valve position via web interface"
     },
     {
       step: "4",
@@ -521,8 +521,8 @@ export const SystemSection = () => {
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">The Solution</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              A three-layer system that replaces manual monitoring with precise,
-              data-driven control.
+              A three-layer system that enables remote monitoring and manual
+              precision valve control.
             </p>
           </div>
 
@@ -606,9 +606,9 @@ export const ResearchSection = () => {
       description: "FastAPI backend, web interface, real-time streaming, REST APIs"
     },
     {
-      icon: Brain,
-      title: "Computer Vision",
-      description: "Image processing, bubble detection, video analysis pipeline"
+      icon: Camera,
+      title: "Video Streaming",
+      description: "Live camera feeds, video compression, real-time streaming protocols"
     },
     {
       icon: LineChart,
@@ -721,17 +721,17 @@ export const FAQSection = () => {
     {
       question: "How does the system improve upon manual monitoring?",
       answer:
-        "Manual monitoring requires lab staff to visually observe bubble rates at regular intervals, which is time-consuming, subjective, and prone to human error. Our system uses a camera to provide continuous remote monitoring, log data for analysis, and control acetone flow via a motorized valve. This results in more consistent specimen quality, reduced labor costs, and valuable historical data for process optimization."
+        "Manual monitoring requires lab staff to be physically present to observe bubble rates, which is time-consuming and limits operational flexibility. Our system uses a camera to provide continuous remote monitoring via a secure web interface, allowing operators to control acetone flow via a motorized valve from any location. This results in more flexible lab operations while maintaining full operator control over the process."
     },
     {
       question: "What hardware components make up the system?",
       answer:
-        "The system is built around a Raspberry Pi 5 single-board computer, which controls an IMX708 wide-angle camera for bubble detection and a NEMA 17 stepper motor (driven by a DM542 driver) that operates a precision valve. Power is supplied by a 24V Mean Well supply with a ULN2003A transistor array for proper motor control. The valve linkage is custom 3D-printed from PETG to withstand acetone fumes, and limit switches provide safe homing functionality."
+        "The system is built around a Raspberry Pi 5 single-board computer, which provides a video stream from an IMX708 wide-angle camera and controls a NEMA 17 stepper motor (driven by a DM542 driver) that operates a precision valve. Power is supplied by a 24V Mean Well supply with a ULN2003A transistor array for proper motor control. The valve linkage is custom 3D-printed from PETG to withstand acetone fumes, and limit switches provide safe homing functionality."
     },
     {
-      question: "How does the camera-based monitoring work?",
+      question: "How does the video monitoring work?",
       answer:
-        "The system uses an IMX708 wide-angle camera connected to the Raspberry Pi to capture continuous video of the bubbling process. This live feed is streamed to a secure web interface where researchers can remotely observe the acetone tank and monitor bubble activity. The video data is logged for later review and analysis, enabling researchers to track process trends over time and optimize the plastination workflow."
+        "The system uses an IMX708 wide-angle camera connected to the Raspberry Pi to capture continuous video of the bubbling process. This live feed is streamed to a secure web interface where researchers can remotely observe the acetone tank in real-time. The video can be recorded for later review, enabling researchers to document the process and review specific events as needed."
     },
     {
       question: "Is the system publicly accessible?",
@@ -751,7 +751,7 @@ export const FAQSection = () => {
     {
       question: "What are the next steps for this project?",
       answer:
-        "Current work focuses on implementing closed-loop feedback control, where the system adjusts the valve to maintain an optimal bubble rate based on monitoring data. Future development includes adding additional sensors for temperature and flow rate, expanding the web dashboard with advanced analytics and historical trend visualization, and improving overall system reliability. Long-term goals include deploying the system in multiple anatomy labs to gather comparative data and further validate its effectiveness."
+        "Current work focuses on enhancing the web interface with improved video streaming quality and adding additional sensors for temperature and flow rate monitoring. Future development includes expanding the web dashboard with better data visualization tools and improving overall system reliability. Long-term goals include deploying the system in multiple anatomy labs to provide remote monitoring capabilities and validate its effectiveness."
     },
     {
       question: "Who can I contact for more information?",
@@ -803,17 +803,17 @@ export const FutureSection = () => {
   const roadmap = [
     {
       icon: TrendingUp,
-      title: "Closed-Loop Control",
+      title: "Enhanced Video Quality",
       status: "In Progress",
       description:
-        "Implementing feedback control where the system continuously adjusts the valve to maintain optimal bubble rates based on real-time monitoring data."
+        "Improving video streaming quality with better compression, higher resolution options, and reduced latency for more effective remote monitoring."
     },
     {
       icon: Lightbulb,
-      title: "Advanced Analytics",
+      title: "Improved Dashboard",
       status: "Planned",
       description:
-        "Building comprehensive data visualization dashboards with historical trends, comparative analysis, and process optimization recommendations."
+        "Building comprehensive data visualization dashboards with historical trends, improved controls, and better operator interface design."
     },
     {
       icon: Target,
