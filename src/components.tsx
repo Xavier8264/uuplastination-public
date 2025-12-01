@@ -110,7 +110,7 @@ export const Navigation = () => {
             >
               FAQ
             </button>
-            <a href="/secure" target="_blank" rel="noopener noreferrer">
+            <a href="/secure">
               <Button variant="outline" size="sm">
                 Lab Login
               </Button>
@@ -153,7 +153,7 @@ export const Navigation = () => {
             >
               FAQ
             </button>
-            <a href="/secure" target="_blank" rel="noopener noreferrer">
+            <a href="/secure">
               <Button variant="outline" size="sm" className="w-full">
                 Lab Login
               </Button>
@@ -255,8 +255,6 @@ export const Footer = () => {
                 <a
                   href="/secure"
                   className="text-sm text-primary hover:underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
                 >
                   Lab Staff Login →
                 </a>
