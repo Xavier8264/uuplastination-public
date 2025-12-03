@@ -112,7 +112,7 @@ export const Navigation = () => {
             </button>
             <a href="/secure">
               <Button variant="outline" size="sm">
-                Lab Login
+                Go To Secure Dashboard
               </Button>
             </a>
           </div>
@@ -155,7 +155,7 @@ export const Navigation = () => {
             </button>
             <a href="/secure">
               <Button variant="outline" size="sm" className="w-full">
-                Lab Login
+                Go To Secure Dashboard
               </Button>
             </a>
           </div>
